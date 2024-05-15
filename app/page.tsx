@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 
 export default function Home() {
   return (
-<>
- <Button variant={"secondary"}>click here</Button>
-</>
+    <div>
+      {/* this app is mainly for the next auth and its application... lets see how can we run this smoothly with the sever. */}
+      <UserButton afterSignOutUrl="/"/>
+    </div>
   );
 }
