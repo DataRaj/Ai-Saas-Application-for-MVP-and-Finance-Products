@@ -6,7 +6,9 @@ import React from "react";
 export default function Page() {
     
     return(
+      
     <div className="lg:grid-cols-2 min-h-screen grid grid-cols-1">
+
       <div className=" h-full flex flex-col items-center justify-center px-4">
         <div className=" text-center space-y-4 pt-16">
             <h1 className=" font-bold text-3xl text-[#2E2A47]">
