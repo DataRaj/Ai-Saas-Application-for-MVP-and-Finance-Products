@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { MouseEventHandler, useState } from 'react'
 
 import { usePathname, useRouter } from 'next/navigation'
 import { useMedia } from 'react-use'
@@ -43,7 +43,7 @@ function Navigation() {
   const pathname = usePathname()
   const isMobile = useMedia("(max-width: 1024px)",false)
 
-  const onClick = (href: string) =>{
+  const onClick = (href: string)  => (event: React.MouseEvent<HTMLButtonElement>) => {
     router.push(href)
     setIsOpen(false)
   }
@@ -90,6 +90,7 @@ function Navigation() {
           key={route.href}
           href={route.href}
           label={route.label}
+          isActive={pathname === route.href}
           />
         ))
       }
