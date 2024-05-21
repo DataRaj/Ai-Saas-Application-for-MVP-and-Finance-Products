@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
 
-// const Layout = ({children}: {children: ReactNode}) => {
-  const Layout = () => {
+const Layout = ({children}: {children: ReactNode}) => {
+  // const Layout = () => {
   return (
       <>
       <nav className=' absolute flex flex-1 mb-4 justify-start '>
@@ -13,7 +13,7 @@ import React, { ReactNode } from 'react'
             </Link>
       </div>
     </nav>
-    {/* {children} */}
+    {children}
     </>
   )
 }
