@@ -3,14 +3,19 @@
 import React, { ReactNode } from 'react'
 import Header from '@/components/header'
 import Navbar from '@/components/global/navbar';
+import Sidebar from '@/components/sidebar';
 
 function DashboardLayout({children}:{children:ReactNode}) {
   return (
     <>
-    {/* <Header/> */}
-    <Navbar/>
-    <main className='px-3 lg:px-14'>
-        This is Dashboard Layout
+    {/* <Header/> */} 
+      {/* <Navbar/> */}
+      <div className='flex flex-1 justify-start items-center'>
+      
+    <Sidebar />
+      </div>
+      
+        <main className='px-3 lg:px-14'>
       {children}
     </main>
     </>
