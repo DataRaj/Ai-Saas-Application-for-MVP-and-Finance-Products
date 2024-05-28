@@ -6,17 +6,15 @@ import Link from 'next/link'
 import { Tooltip, TooltipProvider, TooltipTrigger,TooltipContent } from '../ui/tooltip'
 import { menuOptions } from '@/lib/constant'
 import { Separator } from '../ui/separator'
-import { DatabaseIcon, GitBranch, GitBranchIcon, LucideMousePointer, LucideMousePointerClick, LucideProps, MousePointerClickIcon } from 'lucide-react'
+import { CloudIcon, DatabaseIcon, GitBranch, GitBranchIcon, LucideMousePointer, LucideMousePointerClick, LucideProps, MousePointerClickIcon } from 'lucide-react'
+import { ModeToggle } from '../global/mod-toggle'
 
 function Sidebar() {
     const pathName = usePathname()
   return (
-    <nav className='flex flex-col justify-start items-center 
-    gap-10 py-6 px-1 dark:bg-black overflow-scroll'>
-      <div className='flex flex-col justify-center items-center gap-8'>
-        <Link className="flex flex-row font-bold" href={'/'}>
-            fuzzie.
-        </Link>
+    <nav className='flex flex-col justify-around items-center 
+    gap-10 px-1 dark:bg-black overflow-scroll h-lvh'>
+      <div className=' mt-16 flex flex-col justify-self-start items-center gap-5'>
         <TooltipProvider>
           {menuOptions.map((option) => (
               <ul key={option.name}>
@@ -39,14 +37,18 @@ function Sidebar() {
           ))}
         </TooltipProvider>
         <Separator/>
+      </div>
         <div className='flex flex-col items-center gap-6 dark:bg-[#353346]/20
         py-4 px-2 rounded-full h-56 overflow-scroll border-[1px]'>
          <IconComponent Icon={MousePointerClickIcon} />
          <IconComponent Icon={GitBranchIcon}/>
          <IconComponent Icon={DatabaseIcon}/>
-
+         <IconComponent Icon={CloudIcon}/>
         </div>
-      </div>
+
+        <div className='flex justify-end'>
+        <ModeToggle />
+        </div>
     </nav>
   )
 }
