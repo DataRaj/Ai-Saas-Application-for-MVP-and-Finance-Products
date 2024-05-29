@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react'
 import React, { ReactNode } from 'react'
 
 const WorkFlowButton = (props: {}) => {
-  const {setOpen, setClose } = useModal();
+  const {setOpen, setClose } = useModal() ;
   const handlClick = ()=>{}
     return (
     <div>
