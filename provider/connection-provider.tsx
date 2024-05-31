@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Dispatch, SetStateAction, createContext, useContext } from 'react'
+import React, { Dispatch, SetStateAction, createContext, use, useContext, useState } from 'react'
 export type ConnectionProviderProps ={
   discordNode: {
     webhookURL: string,
@@ -88,10 +88,43 @@ const InitialValues: ConnectionProviderProps = {
   setWorkFlowTemplate: () => undefined,
 }
 
-const ConnectionProvider = createContext(InitialValues);
-const {provider} = ConnectionProvider
+const ConnectionContext = createContext(InitialValues);
+const {Provider} = ConnectionContext
+type props = {
+  children: React.ReactNode
+}
+export const ConnectionsProvider = ({children}:props) => {
+  const [discordNode, setDiscordNode] = useState(InitialValues.discordNode)
+  const [notionNode, setNotionNode] = useState(InitialValues.notionNode)
+  const [slackNode, setSlackNode] = useState(InitialValues.slackNode)
+  const [googleNode, setGoogleNode] = useState(InitialValues.googleNode)
+  const [workflowTemplate, setWorkFlowTemplate] = useState(InitialValues.workflowTemplate)
+  const [isLoading, setIsLoading] = useState(InitialValues.isLoading)
+  return (
+    <Provider 
+    value={{
+      discordNode,
+      setDiscordNode,
+      googleNode,
+      setGoogleNode,
+      notionNode,
+      setNotionNode,
+      slackNode,
+      setSlackNode,
+      workflowTemplate,
+      setWorkFlowTemplate,
+      isLoading,
+      setIsLoading
+    }}>
+      {children}
+    </Provider>
+  )
+} 
 
-
+const useNodeConnection = () => {
+  const nodeConnection = useContext(ConnectionContext)
+  return nodeConnection
+}
 // const ConnectionProvider = (props: ConnectionProviderProps) => {
 //   return (
 //     <div>
