@@ -1,6 +1,6 @@
 import Workflows from "@/components/icons/workflows"
-import WorkFlow from "@/components/pages/workflows/workflow"
-import WorkFlowButton from "@/components/pages/workflows/workflow-button"
+import WorkFlow from "@/app/(nav)/(pages)/workflows/_components/workflow"
+import WorkFlowButton from "@/app/(nav)/(pages)/workflows/_components/workflow-button"
 import { boolean } from "zod"
 
 type props ={

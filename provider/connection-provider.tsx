@@ -1,5 +1,4 @@
 'use client'
-
 import React, { Dispatch, SetStateAction, createContext, use, useContext, useState } from 'react'
 export type ConnectionProviderProps ={
   discordNode: {
@@ -121,7 +120,7 @@ export const ConnectionsProvider = ({children}:props) => {
   )
 } 
 
-const useNodeConnection = () => {
+export const useNodeConnection = () => {
   const nodeConnection = useContext(ConnectionContext)
   return nodeConnection
 }
