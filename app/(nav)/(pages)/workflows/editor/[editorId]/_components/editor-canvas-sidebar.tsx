@@ -1,6 +1,6 @@
 'use client'
 import { EditorCanvasTypes, EditorNodeType } from '@/lib/type'
-import { useNodeConnection} from '@/provider/connection-provider'
+import { useNodeConnections} from '@/provider/connection-provider'
 import { useEditor } from '@/provider/editor-provider'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
@@ -35,7 +35,7 @@ type Props = {
 
 const EditorCanvasSidebar = ({ nodes }: Props) => {
   const { state } = useEditor()
-  const { nodeConnection } = useNodeConnection()
+  const { nodeConnection } = useNodeConnections()
   const { googleFile, setSlackChannels } = useFuzzieStore()
   useEffect(() => {
     if (state) {
@@ -109,13 +109,16 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
                 Account
               </AccordionTrigger>
               <AccordionContent>
-                {CONNECTIONS.map((connection) => (
-                  <RenderConnectionAccordion
+                {CONNECTIONS.map((connection) => {
+
+                
+                  console.log(connection.title);
+                  return <RenderConnectionAccordion
                     key={connection.title}
                     state={state}
                     connection={connection}
                   />
-                ))}
+                  })}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem

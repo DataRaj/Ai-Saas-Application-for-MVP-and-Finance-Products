@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
-import ConnectionCard from '@/app/(main)/(pages)/connections/_components/connection-card'
+import ConnectionCard from '@/app/(nav)/(pages)/connections/_components/connection-card' 
 import { AccordionContent } from '@/components/ui/accordion'
 import MultipleSelector from '@/components/ui/multiple-selector'
 import { Connection } from '@/lib/type'
-import { useNodeConnection } from '@/provider/connection-provider'
+import { useNodeConnections } from '@/provider/connection-provider'
 import { EditorState } from '@/provider/editor-provider'
 import { useFuzzieStore } from '@/store'
 import {
@@ -51,7 +51,7 @@ const RenderConnectionAccordion = ({
   state,
 }: {
   connection: Connection
-  state: EditorState
+  state: EditorState 
 }) => {
   const {
     title,
@@ -63,7 +63,7 @@ const RenderConnectionAccordion = ({
     slackSpecial,
   } = connection
 
-  const { nodeConnection } = useNodeConnection()
+  const { nodeConnection } = useNodeConnections()
   const { slackChannels, selectedSlackChannels, setSelectedSlackChannels } =
     useFuzzieStore()
 

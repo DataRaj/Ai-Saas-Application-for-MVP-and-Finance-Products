@@ -3,11 +3,13 @@ import { Option } from './content-based-on-title'
 import { ConnectionProviderProps } from '@/provider/connection-provider'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { postContentToWebHook } from '@/app/(main)/(pages)/connections/_actions/discord-connection'
+
 import { onCreateNodeTemplate } from '../../../_actions/workflow-connections'
 import { toast } from 'sonner'
-import { onCreateNewPageInDatabase } from '@/app/(main)/(pages)/connections/_actions/notion-connection'
-import { postMessageToSlack } from '@/app/(main)/(pages)/connections/_actions/slack-connection'
+
+import { postContentToWebHook } from '@/app/(nav)/(pages)/connections/_actions/discord-connections'
+import { onCreateNewPageInDatabase } from '@/app/(nav)/(pages)/connections/_actions/notion-connection'
+import { postMessageToSlack } from '@/app/(nav)/(pages)/connections/_actions/slack-connection'
 
 type Props = {
   currentService: string
@@ -93,7 +95,7 @@ const ActionButton = ({
         currentService,
         pathname.split('/').pop()!,
         channels,
-        nodeConnection.slackNode.slackAccessToken
+        nodeConnection.slackNode.slackAccessToken.toString() // TODO: Fix this type issue, just added the temporary fix
       )
 
       if (response) {

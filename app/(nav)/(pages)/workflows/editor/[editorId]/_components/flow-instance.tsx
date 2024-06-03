@@ -1,6 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { useNodeConnection } from '@/provider/connection-provider'
+import { useNodeConnections } from '@/provider/connection-provider'
 import { usePathname } from 'next/navigation'
 import React, { useCallback, useEffect, useState } from 'react'
 import {
@@ -18,7 +18,7 @@ type Props = {
 const FlowInstance = ({ children, edges, nodes }: Props) => {
   const pathname = usePathname()
   const [isFlow, setIsFlow] = useState([])
-  const { nodeConnection } = useNodeConnection()
+  const { nodeConnection } = useNodeConnections()
 
   const onFlowAutomation = useCallback(async () => {
     const flow = await onCreateNodesEdges(
