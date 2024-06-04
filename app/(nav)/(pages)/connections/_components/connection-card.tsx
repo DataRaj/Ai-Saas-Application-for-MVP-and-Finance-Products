@@ -10,9 +10,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
-  type: ConnectionTypes
+  type: string // just made a change here from type: ConnectionTypes to type: string
   icon: string
-  title: ConnectionTypes
+  title: string  // just made a change here from title: connectionTypes to title: string
   description: string
   callback?: () => void
   connected: {} & any

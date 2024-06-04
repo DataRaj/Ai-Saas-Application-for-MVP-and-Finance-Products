@@ -1,5 +1,5 @@
 import ProfileForm from '@/components/forms/profile-form'
-import ProfilPicture from './_components/profile.-picture'
+import ProfilPicture from './_components/profile-picture'
 import { db } from '@/lib/db'
 import { currentUser } from '@clerk/nextjs/server'
 import React from 'react'

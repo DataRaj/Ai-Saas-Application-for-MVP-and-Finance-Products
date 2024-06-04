@@ -34,7 +34,7 @@
     "class-variance-authority": "^0.7.0",
     "clerk": "^0.8.3",
     "clsx": "^2.1.1",
-    "cmdk": "^1.0.0",
+    "cmdk": "0.2.0",
     "framer-motion": "^11.2.4",
     "googleapis": "^137.1.0",
     "hono": "^4.3.10",
