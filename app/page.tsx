@@ -12,7 +12,6 @@ import { CheckIcon } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Home() {
-  //WIP: remove fault IMAge for home page
   return (
     <main className="flex items-center justify-center flex-col">
       <Navbar />
@@ -78,7 +77,6 @@ export default function Home() {
           price={99}
           tagline={`now you are become our permenant customer then how can you just left us here get everything and anytime no timebound :)`}
           benifits={[
-            // '1 person only',
             '20 minute one to one talk!',
             'free message service for a day (only one person)!',
             'one month membership free',

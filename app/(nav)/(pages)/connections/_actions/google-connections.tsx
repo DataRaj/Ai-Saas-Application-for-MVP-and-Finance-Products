@@ -22,7 +22,7 @@ export const getFileMetaData = async () => {
     provider,
 
   )
-
+// @ts-ignore
   const accessToken = clerkResponse[0].token
 
   oauth2Client.setCredentials({

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import * as LR from '@uploadcare/blocks'
 import { useEffect, useRef } from "react"
+import { on } from "events"
 
 type props= {
     onUpload: (e:string) =>any
@@ -21,7 +22,7 @@ const UploadCareButton = ({onUpload}:props) =>{
             }
             ctxProviderRef.current?.addEventListener('file-upload-success',handleUpload)
         }
-        ,[])
+        ,[onUpload,router])
 
         return <div className="">
              <lr-config

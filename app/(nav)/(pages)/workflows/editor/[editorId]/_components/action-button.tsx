@@ -38,7 +38,7 @@ const ActionButton = ({
         content: '',
       }))
     }
-  }, [nodeConnection.discordNode])
+  }, [nodeConnection])
 
   const onStoreNotionContent = useCallback(async () => {
     console.log(
@@ -57,7 +57,7 @@ const ActionButton = ({
         content: '',
       }))
     }
-  }, [nodeConnection.notionNode])
+  }, [nodeConnection]) //made changes here from nodeConnection.notionNode to nodeConnection
 
   const onStoreSlackContent = useCallback(async () => {
     const response = await postMessageToSlack(
@@ -75,7 +75,7 @@ const ActionButton = ({
     } else {
       toast.error(response.message)
     }
-  }, [nodeConnection.slackNode, channels])
+  }, [nodeConnection, channels, setChannels]) // made changes here from nodeConnection.slackNode.channels to channels and 
 
   const onCreateLocalNodeTempate = useCallback(async () => {
     if (currentService === 'Discord') {
