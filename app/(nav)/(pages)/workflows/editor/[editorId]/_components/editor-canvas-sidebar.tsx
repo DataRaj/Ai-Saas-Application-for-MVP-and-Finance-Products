@@ -116,6 +116,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
                   return <RenderConnectionAccordion
                     key={connection.title}
                     state={state}
+                    // @ts-ignore
                     connection={connection}
                   />
                   })}
